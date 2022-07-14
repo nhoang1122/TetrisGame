@@ -59,7 +59,7 @@ const Tetris = () => {
     if (rows > (level + 1) * 10) {
       setLevel(prev => prev + 1);
       // Also increase speed
-      setDropTime(1000 / (level + 1) + 200);
+      setDropTime(10000 / (level + 1) + 200);
     }
 
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
@@ -83,7 +83,6 @@ const Tetris = () => {
   };
 
   // This one starts the game
-  // Custom hook by Dan Abramov
   useInterval(() => {
     drop();
   }, dropTime);
